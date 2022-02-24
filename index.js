@@ -2,8 +2,8 @@
 let arr = []
 let arr2 = []
 let users = async () => {
-    let data = await fetch("https://jsonplaceholder.typicode.com/todos")
-    let result = await data.json()
+    let result = await fetch("https://jsonplaceholder.typicode.com/todos").then(res => res.json()).catch((err) => console.log(err))
+
     arr = result
     var table = document.getElementById('table');
     arr.forEach((object) => {
